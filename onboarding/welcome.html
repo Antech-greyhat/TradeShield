@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome | TradeShield</title>
+    <link rel="icon" href="../Assets/icons/icon-32.png">
+    <link rel="stylesheet" href="../css/tailwind-local.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/app.js"></script>
+    <script src="../js/ui.js" defer></script>
+    <script src="../js/onboarding.js" defer></script>
+  </head>
+  <body>
+    <div class="page-loader" role="status" aria-label="Loading onboarding">
+      <div class="loader-shell">
+        <div class="skeleton h-5 w-48"></div>
+        <div class="mt-4 skeleton h-28 w-full"></div>
+      </div>
+    </div>
+    <main class="ts-page">
+      <header class="ts-container flex items-center justify-between py-5">
+        <a class="ts-brand" href="../index.html" aria-label="TradeShield home">
+          <img class="ts-logo" src="../Assets/icons/icon-128.png" alt="">
+          <span>TradeShield</span>
+        </a>
+        <button class="toggle" type="button" data-theme-toggle role="switch" aria-label="Switch theme" aria-checked="false"></button>
+      </header>
+      <section class="ts-container grid min-h-[calc(100vh-84px)] items-center gap-8 py-8 lg:grid-cols-[0.9fr_1fr]">
+        <div>
+          <span class="ts-pill pill-success">First-time setup</span>
+          <h1 class="mt-5 text-4xl font-black sm:text-5xl">Welcome to TradeShield</h1>
+          <p class="mt-4 max-w-xl text-lg leading-8 ts-muted">Set up a focused browser-extension workflow for safer broker research, copy-trading checks, and API-key protection.</p>
+          <div class="mt-8 progress-track" aria-label="Onboarding progress">
+            <div class="progress-bar" data-onboarding-progress></div>
+          </div>
+        </div>
+        <section class="ts-card p-6 sm:p-8" aria-live="polite">
+          <div data-onboarding-card></div>
+          <div class="mt-8 flex items-center justify-between gap-4">
+            <div class="flex gap-2" data-onboarding-dots></div>
+            <div class="flex gap-2">
+              <button class="ts-btn ts-btn-secondary" type="button" data-onboarding-prev>Back</button>
+              <button class="ts-btn ts-btn-primary" type="button" data-onboarding-next>Next</button>
+            </div>
+          </div>
+          <button class="ts-btn ts-btn-ghost mt-4 w-full" type="button" data-navigate="guide.html">Skip</button>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

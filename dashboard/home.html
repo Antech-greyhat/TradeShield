@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | TradeShield</title>
+    <link rel="icon" href="../Assets/icons/icon-32.png">
+    <link rel="stylesheet" href="../css/tailwind-local.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/app.js"></script>
+    <script src="../js/ui.js" defer></script>
+    <script src="../js/dashboard.js" defer></script>
+  </head>
+  <body>
+    <div class="page-loader" role="status" aria-label="Loading dashboard">
+      <div class="loader-shell"><div class="skeleton h-5 w-44"></div><div class="mt-4 skeleton h-32"></div></div>
+    </div>
+    <main class="ts-page dashboard-shell">
+      <aside class="desktop-sidebar min-h-screen border-r p-5 ts-border">
+        <a class="ts-brand" href="../index.html"><img class="ts-logo" src="../Assets/icons/icon-128.png" alt=""><span>TradeShield</span></a>
+        <nav class="mt-8 grid gap-2" aria-label="Dashboard navigation">
+          <a class="nav-item px-4" href="home.html" data-nav-page="home.html">Overview</a>
+          <a class="nav-item px-4" href="scanner.html" data-nav-page="scanner.html">Scanner</a>
+          <a class="nav-item px-4" href="alerts.html" data-nav-page="alerts.html">Alerts</a>
+          <a class="nav-item px-4" href="brokers.html" data-nav-page="brokers.html">Brokers</a>
+          <a class="nav-item px-4" href="settings.html" data-nav-page="settings.html">Settings</a>
+        </nav>
+      </aside>
+      <section class="dashboard-main min-w-0">
+        <header class="sticky top-0 z-30 border-b bg-[color:var(--surface)]/90 px-4 py-4 backdrop-blur ts-border lg:px-8">
+          <div class="flex items-center justify-between gap-4">
+            <div><p class="text-sm font-bold ts-muted">Protection overview</p><h1 class="text-2xl font-black">Dashboard Home</h1></div>
+            <button class="toggle" type="button" data-theme-toggle role="switch" aria-label="Switch theme" aria-checked="false"></button>
+          </div>
+        </header>
+        <div class="grid gap-6 p-4 lg:p-8">
+          <section class="grid gap-4 xl:grid-cols-4">
+            <article class="ts-card p-5 xl:col-span-2"><span class="ts-pill pill-success">Protected</span><h2 class="mt-4 text-2xl font-black">Protection Status</h2><p class="mt-2 ts-muted">Real-time extension checks are active for investment and broker websites.</p><div class="mt-5 progress-track"><div class="progress-bar progress-94"></div></div></article>
+            <article class="ts-card p-5"><p class="font-bold ts-muted">Current Website</p><h2 class="mt-3 text-xl font-black">blueharbor-capital.com</h2><span class="risk-badge risk-low mt-4">Low risk</span></article>
+            <article class="ts-card p-5"><p class="font-bold ts-muted">Risk Score</p><div class="mt-4 risk-meter meter-low meter-24"><span>24</span></div></article>
+          </section>
+          <section class="grid gap-4 lg:grid-cols-[1fr_360px]">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <button class="ts-card p-5 text-left" type="button" data-navigate="scanner.html"><span class="ts-pill pill-success">Quick action</span><h3 class="mt-4 text-xl font-black">Scan Website</h3><p class="mt-2 ts-muted">Analyze a broker or investment domain.</p></button>
+              <button class="ts-card p-5 text-left" type="button" data-navigate="brokers.html"><span class="ts-pill pill-warning">Quick action</span><h3 class="mt-4 text-xl font-black">Verify Broker</h3><p class="mt-2 ts-muted">Search license and trust signals.</p></button>
+              <button class="ts-card p-5 text-left" type="button" data-navigate="alerts.html"><span class="ts-pill pill-danger">Quick action</span><h3 class="mt-4 text-xl font-black">View Alerts</h3><p class="mt-2 ts-muted">Review monitored threat events.</p></button>
+              <button class="ts-card p-5 text-left" type="button" data-home-action="report"><span class="ts-pill pill-danger">Quick action</span><h3 class="mt-4 text-xl font-black">Report Scam</h3><p class="mt-2 ts-muted">Prepare a structured scam report.</p></button>
+            </div>
+            <aside class="ts-panel p-5">
+              <h2 class="text-xl font-black">Threat Summary</h2>
+              <div class="mt-5 grid gap-3">
+                <div class="flex justify-between"><span class="ts-muted">API theft attempts</span><strong>3</strong></div>
+                <div class="flex justify-between"><span class="ts-muted">Broker mismatches</span><strong>7</strong></div>
+                <div class="flex justify-between"><span class="ts-muted">Suspicious domains</span><strong>12</strong></div>
+              </div>
+            </aside>
+          </section>
+          <section class="grid gap-4 md:grid-cols-3">
+            <article class="ts-panel p-5"><p class="metric-value" data-count-to="184">0</p><p class="font-bold ts-muted">Websites Scanned</p></article>
+            <article class="ts-panel p-5"><p class="metric-value" data-count-to="29">0</p><p class="font-bold ts-muted">Threats Prevented</p></article>
+            <article class="ts-panel p-5"><p class="metric-value" data-count-to="8">0</p><p class="font-bold ts-muted">High Risk Detections</p></article>
+          </section>
+          <section class="ts-panel p-5">
+            <div class="flex items-center justify-between gap-4"><h2 class="text-xl font-black">Recent Activity Feed</h2><button class="ts-btn ts-btn-secondary" type="button" data-feedback="Activity refreshed.">Refresh</button></div>
+            <div class="mt-5 grid gap-3">
+              <article class="ts-card p-4"><span class="risk-badge risk-high">High</span><h3 class="mt-2 font-black">CoinMirage requested withdrawal-enabled API key</h3><p class="text-sm ts-muted">2 minutes ago</p></article>
+              <article class="ts-card p-4"><span class="risk-badge risk-medium">Medium</span><h3 class="mt-2 font-black">ApexYield license mismatch found</h3><p class="text-sm ts-muted">18 minutes ago</p></article>
+              <article class="ts-card p-4"><span class="risk-badge risk-low">Low</span><h3 class="mt-2 font-black">BlueHarbor domain verified</h3><p class="text-sm ts-muted">1 hour ago</p></article>
+            </div>
+          </section>
+        </div>
+      </section>
+      <nav class="bottom-nav" aria-label="Mobile dashboard navigation">
+        <a href="home.html" data-nav-page="home.html">Home</a><a href="scanner.html" data-nav-page="scanner.html">Scan</a><a href="alerts.html" data-nav-page="alerts.html">Alerts</a><a href="brokers.html" data-nav-page="brokers.html">Brokers</a><a href="settings.html" data-nav-page="settings.html">Settings</a>
+      </nav>
+    </main>
+  </body>
+</html>

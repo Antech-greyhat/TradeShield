@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="TradeShield detects suspicious trading platforms, fake brokers, copy-trading scams, and API-key theft attempts.">
+    <title>TradeShield | Trade Secure. Invest Smarter. Stay Protected.</title>
+    <link rel="icon" href="Assets/icons/icon-32.png">
+    <link rel="stylesheet" href="css/tailwind-local.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/app.js"></script>
+    <script src="js/ui.js" defer></script>
+  </head>
+  <body>
+    <div class="page-loader" role="status" aria-label="Loading TradeShield">
+      <div class="loader-shell">
+        <div class="flex items-center gap-3">
+          <img class="ts-logo" src="Assets/icons/icon-128.png" alt="">
+          <div>
+            <strong>TradeShield</strong>
+            <p class="text-sm ts-muted">Preparing protection engine</p>
+          </div>
+        </div>
+        <div class="mt-5 grid gap-3">
+          <div class="skeleton h-4 w-5/6"></div>
+          <div class="skeleton h-4 w-3/5"></div>
+        </div>
+      </div>
+    </div>
+
+    <main class="ts-page">
+      <header class="ts-container flex items-center justify-between py-5">
+        <a class="ts-brand" href="index.html" aria-label="TradeShield home">
+          <img class="ts-logo" src="Assets/icons/icon-128.png" alt="">
+          <span>TradeShield</span>
+        </a>
+        <nav class="hidden items-center gap-2 md:flex" aria-label="Primary navigation">
+          <button class="ts-btn ts-btn-ghost" type="button" data-scroll="#features">Features</button>
+          <button class="ts-btn ts-btn-ghost" type="button" data-scroll="#how">How it works</button>
+          <a class="ts-btn ts-btn-secondary" href="dashboard/home.html">Dashboard</a>
+          <button class="toggle" type="button" data-theme-toggle role="switch" aria-label="Switch theme" aria-checked="false"></button>
+        </nav>
+        <button class="toggle md:hidden" type="button" data-theme-toggle role="switch" aria-label="Switch theme" aria-checked="false"></button>
+      </header>
+
+      <section class="ts-container grid min-h-[calc(100vh-84px)] items-center gap-10 py-10 lg:grid-cols-[1fr_0.9fr]">
+        <div class="animate-slide-up">
+          <span class="ts-pill pill-success">Browser extension security</span>
+          <h1 class="mt-6 max-w-4xl text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">Protect Yourself From Trading Scams Before They Steal Your Money</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 ts-muted">TradeShield detects suspicious brokers, fake investment platforms, copy-trading scams, and API-key theft attempts before they become costly mistakes.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <button class="ts-btn ts-btn-primary" type="button" data-navigate="onboarding/welcome.html">Get Started</button>
+            <button class="ts-btn ts-btn-secondary" type="button" data-scroll="#features">Learn More</button>
+          </div>
+        </div>
+        <div class="extension-frame animate-fade-in" aria-label="TradeShield extension preview">
+          <div class="browser-bar">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="ml-3 truncate rounded-md border px-3 py-2 text-sm ts-muted ts-border">apexyield-markets.com</span>
+          </div>
+          <div class="p-5 sm:p-7">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <p class="text-sm font-bold ts-muted">Current website</p>
+                <h2 class="mt-1 text-2xl font-black">High-risk trading page</h2>
+              </div>
+              <span class="risk-badge risk-high">Block recommended</span>
+            </div>
+            <div class="mt-8 grid gap-6 sm:grid-cols-[170px_minmax(0,1fr)]">
+              <div class="risk-meter meter-high meter-88"><span>88</span></div>
+              <div class="grid gap-3">
+                <article class="ts-card p-4">
+                  <span class="risk-badge risk-high">API theft</span>
+                  <h3 class="mt-2 font-black">Withdrawal permission requested</h3>
+                </article>
+                <article class="ts-card p-4">
+                  <span class="risk-badge risk-medium">Broker mismatch</span>
+                  <h3 class="mt-2 font-black">License name does not align</h3>
+                </article>
+                <article class="ts-card p-4">
+                  <span class="risk-badge risk-low">Domain check</span>
+                  <h3 class="mt-2 font-black">Newly observed investment domain</h3>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="ts-container py-16">
+        <div class="max-w-2xl">
+          <span class="ts-pill pill-success">Protection layers</span>
+          <h2 class="mt-4 text-3xl font-black sm:text-4xl">Built for risky trading workflows</h2>
+          <p class="mt-3 ts-muted">Fast signals for websites, brokers, regulators, domains, and API prompts.</p>
+        </div>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <article class="ts-card p-5" tabindex="0"><span class="text-2xl">⌕</span><h3 class="mt-4 font-black">Scan Websites</h3><p class="mt-2 text-sm ts-muted">Analyze suspicious investment pages in seconds.</p></article>
+          <article class="ts-card p-5" tabindex="0"><span class="text-2xl">✓</span><h3 class="mt-4 font-black">Verify Brokers</h3><p class="mt-2 text-sm ts-muted">Compare broker claims with trust signals.</p></article>
+          <article class="ts-card p-5" tabindex="0"><span class="text-2xl">Key</span><h3 class="mt-4 font-black">Detect API Theft</h3><p class="mt-2 text-sm ts-muted">Flag dangerous exchange key requests.</p></article>
+          <article class="ts-card p-5" tabindex="0"><span class="text-2xl">Age</span><h3 class="mt-4 font-black">Check Domain Age</h3><p class="mt-2 text-sm ts-muted">Spot newly registered scam domains.</p></article>
+          <article class="ts-card p-5" tabindex="0"><span class="text-2xl">!</span><h3 class="mt-4 font-black">Regulator Warnings</h3><p class="mt-2 text-sm ts-muted">Surface mismatch and warning patterns.</p></article>
+        </div>
+      </section>
+
+      <section id="how" class="border-y py-16 ts-border">
+        <div class="ts-container">
+          <div class="grid gap-4 md:grid-cols-3">
+            <article class="ts-card p-6"><span class="ts-pill pill-success">Step 1</span><h3 class="mt-5 text-2xl font-black">Scan</h3><p class="mt-3 ts-muted">Run a fast website, broker, and permission review.</p></article>
+            <article class="ts-card p-6"><span class="ts-pill pill-warning">Step 2</span><h3 class="mt-5 text-2xl font-black">Verify</h3><p class="mt-3 ts-muted">Check license consistency, domain history, and suspicious claims.</p></article>
+            <article class="ts-card p-6"><span class="ts-pill pill-danger">Step 3</span><h3 class="mt-5 text-2xl font-black">Protect</h3><p class="mt-3 ts-muted">Block risky flows before money or credentials leave your control.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ts-container py-16">
+        <div class="grid gap-4 md:grid-cols-3">
+          <article class="ts-panel p-6"><p class="metric-value" data-count-to="128400">0</p><p class="mt-2 font-bold ts-muted">Sites Scanned</p></article>
+          <article class="ts-panel p-6"><p class="metric-value" data-count-to="18420">0</p><p class="mt-2 font-bold ts-muted">Threats Detected</p></article>
+          <article class="ts-panel p-6"><p class="metric-value" data-count-to="62100">0</p><p class="mt-2 font-bold ts-muted">Protected Users</p></article>
+        </div>
+      </section>
+
+      <footer class="border-t py-8 ts-border">
+        <div class="ts-container flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p class="font-bold">Trade Secure. Invest Smarter. Stay Protected.</p>
+          <nav class="flex flex-wrap gap-3" aria-label="Footer navigation">
+            <button class="ts-btn ts-btn-ghost" type="button" data-feedback="Privacy center opened.">Privacy</button>
+            <button class="ts-btn ts-btn-ghost" type="button" data-feedback="Terms preview opened.">Terms</button>
+            <button class="ts-btn ts-btn-ghost" type="button" data-feedback="Contact request prepared.">Contact</button>
+          </nav>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

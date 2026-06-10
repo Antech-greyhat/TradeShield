@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guide | TradeShield</title>
+    <link rel="icon" href="../Assets/icons/icon-32.png">
+    <link rel="stylesheet" href="../css/tailwind-local.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/app.js"></script>
+    <script src="../js/ui.js" defer></script>
+    <script src="../js/onboarding.js" defer></script>
+  </head>
+  <body>
+    <div class="page-loader" role="status" aria-label="Loading guide">
+      <div class="loader-shell">
+        <div class="skeleton h-5 w-40"></div>
+        <div class="mt-4 grid gap-3">
+          <div class="skeleton h-14"></div>
+          <div class="skeleton h-14"></div>
+        </div>
+      </div>
+    </div>
+    <main class="ts-page">
+      <header class="ts-container flex items-center justify-between py-5">
+        <a class="ts-brand" href="../index.html" aria-label="TradeShield home">
+          <img class="ts-logo" src="../Assets/icons/icon-128.png" alt="">
+          <span>TradeShield</span>
+        </a>
+        <button class="toggle" type="button" data-theme-toggle role="switch" aria-label="Switch theme" aria-checked="false"></button>
+      </header>
+      <section class="ts-container py-8">
+        <div class="max-w-2xl">
+          <span class="ts-pill pill-warning">Guided protection</span>
+          <h1 class="mt-5 text-4xl font-black sm:text-5xl">How TradeShield Works</h1>
+          <p class="mt-4 text-lg leading-8 ts-muted">Tap each step to see how the risk engine builds a decision before warning you.</p>
+        </div>
+        <div class="mt-10 grid gap-6 lg:grid-cols-[1fr_380px]">
+          <div class="grid gap-4">
+            <button class="ts-card p-5 text-left ring-4 ring-blue-100" type="button" data-timeline-step="Website scan selected">
+              <span class="ts-pill pill-success">Website Scan</span>
+              <h2 class="mt-4 text-xl font-black">Read the page and domain context</h2>
+              <p class="mt-2 ts-muted">TradeShield checks risky copy, forms, redirects, and domain identity.</p>
+            </button>
+            <button class="ts-card p-5 text-left" type="button" data-timeline-step="Broker verification selected">
+              <span class="ts-pill pill-warning">Broker Verification</span>
+              <h2 class="mt-4 text-xl font-black">Compare broker claims</h2>
+              <p class="mt-2 ts-muted">License numbers, names, and regulator signals are checked for mismatch.</p>
+            </button>
+            <button class="ts-card p-5 text-left" type="button" data-timeline-step="Threat analysis selected">
+              <span class="ts-pill pill-danger">Threat Analysis</span>
+              <h2 class="mt-4 text-xl font-black">Score scam indicators</h2>
+              <p class="mt-2 ts-muted">API permissions, guaranteed returns, and payment-pressure patterns increase risk.</p>
+            </button>
+            <button class="ts-card p-5 text-left" type="button" data-timeline-step="Risk alert selected">
+              <span class="ts-pill pill-danger">Risk Alert</span>
+              <h2 class="mt-4 text-xl font-black">Warn before the risky action</h2>
+              <p class="mt-2 ts-muted">The extension gives a clear action recommendation before money or keys are shared.</p>
+            </button>
+          </div>
+          <aside class="ts-panel p-6">
+            <p class="font-bold ts-muted">Example detection preview</p>
+            <h2 class="mt-2 text-2xl font-black">Copy-trading deposit page</h2>
+            <div class="mt-6 grid place-items-center">
+              <div class="risk-meter meter-low meter-34" data-guide-meter><span>34</span></div>
+            </div>
+            <div class="mt-6 grid gap-3">
+              <div class="ts-card p-4"><span class="risk-badge risk-medium">Keyword match</span><p class="mt-2 font-bold">Guaranteed weekly returns</p></div>
+              <div class="ts-card p-4"><span class="risk-badge risk-high">API request</span><p class="mt-2 font-bold">Withdrawal permission detected</p></div>
+            </div>
+            <div class="mt-6 grid grid-cols-2 gap-3">
+              <button class="ts-btn ts-btn-secondary" type="button" data-navigate="welcome.html">Back</button>
+              <button class="ts-btn ts-btn-primary" type="button" data-navigate="permissions.html">Continue</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

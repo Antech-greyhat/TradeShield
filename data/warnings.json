@@ -1,0 +1,30 @@
+[
+  {
+    "title": "API key withdrawal permission requested",
+    "severity": "High",
+    "source": "Website Analysis",
+    "time": "2 min ago",
+    "detail": "The page requests exchange API permissions that can move funds. TradeShield recommends revoking the key immediately."
+  },
+  {
+    "title": "Broker license could not be matched",
+    "severity": "Medium",
+    "source": "Broker Verification",
+    "time": "18 min ago",
+    "detail": "The broker claims a regulator registration, but the company name and domain do not match available records."
+  },
+  {
+    "title": "Suspicious copy-trading guarantee detected",
+    "severity": "High",
+    "source": "Threat Analysis",
+    "time": "42 min ago",
+    "detail": "The page advertises guaranteed profits and asks users to connect trading accounts."
+  },
+  {
+    "title": "New domain with investment language",
+    "severity": "Low",
+    "source": "Domain Intelligence",
+    "time": "1 hr ago",
+    "detail": "The scanned domain appears recently created and uses promotional investment language."
+  }
+]

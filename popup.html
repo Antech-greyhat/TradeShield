@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TradeShield Extension</title>
+    <link rel="icon" href="Assets/icons/icon-32.png">
+    <link rel="stylesheet" href="css/tailwind-local.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/app.js"></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/popup.js" defer></script>
+  </head>
+  <body class="extension-popup">
+    <main class="popup-shell" aria-label="TradeShield extension popup">
+      <header class="flex items-center justify-between gap-4 border-b p-4 ts-border">
+        <a class="ts-brand" href="dashboard/home.html" target="_blank" aria-label="Open TradeShield dashboard">
+          <img class="ts-logo" src="Assets/icons/icon-128.png" alt="">
+          <span>TradeShield</span>
+        </a>
+        <button class="toggle" type="button" data-theme-toggle role="switch" aria-label="Switch theme" aria-checked="false"></button>
+      </header>
+      <section class="p-4">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <p class="text-sm font-bold ts-muted">Current tab</p>
+            <h1 class="mt-1 text-xl font-black" data-popup-domain>Checking active page</h1>
+          </div>
+          <span class="risk-badge risk-medium" data-popup-risk-label>Scanning</span>
+        </div>
+        <div class="mt-5 grid place-items-center">
+          <div class="risk-meter meter-medium meter-62" data-popup-meter aria-label="Current page risk score">
+            <span data-popup-score>62</span>
+          </div>
+        </div>
+        <div class="mt-5 grid gap-3" data-popup-breakdown>
+          <div class="skeleton h-16"></div>
+          <div class="skeleton h-16"></div>
+          <div class="skeleton h-16"></div>
+        </div>
+      </section>
+      <section class="border-t p-4 ts-border">
+        <div class="grid grid-cols-2 gap-3">
+          <button class="ts-btn ts-btn-primary" type="button" data-popup-scan>Scan Tab</button>
+          <button class="ts-btn ts-btn-secondary" type="button" data-popup-open-dashboard>Dashboard</button>
+          <button class="ts-btn ts-btn-secondary" type="button" data-popup-open-scanner>Full Scanner</button>
+          <button class="ts-btn ts-btn-secondary" type="button" data-popup-report>Report</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

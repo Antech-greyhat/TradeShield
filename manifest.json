@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "TradeShield",
+  "description": "Detect fake trading platforms, broker scams, copy-trading fraud, and API-key theft attempts before they cause losses.",
+  "version": "1.0.0",
+  "action": {
+    "default_title": "TradeShield",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "Assets/icons/icon-16.png",
+      "32": "Assets/icons/icon-32.png",
+      "48": "Assets/icons/icon-48.png",
+      "128": "Assets/icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "Assets/icons/icon-16.png",
+    "32": "Assets/icons/icon-32.png",
+    "48": "Assets/icons/icon-48.png",
+    "128": "Assets/icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "options_page": "dashboard/settings.html"
+}

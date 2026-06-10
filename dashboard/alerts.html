@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alerts | TradeShield</title>
+    <link rel="icon" href="../Assets/icons/icon-32.png">
+    <link rel="stylesheet" href="../css/tailwind-local.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/app.js"></script>
+    <script src="../js/ui.js" defer></script>
+    <script src="../js/dashboard.js" defer></script>
+  </head>
+  <body>
+    <div class="page-loader" role="status" aria-label="Loading alerts"><div class="loader-shell"><div class="skeleton h-5 w-36"></div><div class="mt-4 grid gap-3"><div class="skeleton h-20"></div><div class="skeleton h-20"></div></div></div></div>
+    <main class="ts-page dashboard-shell">
+      <aside class="desktop-sidebar min-h-screen border-r p-5 ts-border">
+        <a class="ts-brand" href="../index.html"><img class="ts-logo" src="../Assets/icons/icon-128.png" alt=""><span>TradeShield</span></a>
+        <nav class="mt-8 grid gap-2" aria-label="Dashboard navigation"><a class="nav-item px-4" href="home.html" data-nav-page="home.html">Overview</a><a class="nav-item px-4" href="scanner.html" data-nav-page="scanner.html">Scanner</a><a class="nav-item px-4" href="alerts.html" data-nav-page="alerts.html">Alerts</a><a class="nav-item px-4" href="brokers.html" data-nav-page="brokers.html">Brokers</a><a class="nav-item px-4" href="settings.html" data-nav-page="settings.html">Settings</a></nav>
+      </aside>
+      <section class="dashboard-main min-w-0">
+        <header class="sticky top-0 z-30 border-b bg-[color:var(--surface)]/90 px-4 py-4 backdrop-blur ts-border lg:px-8"><div class="flex items-center justify-between gap-4"><div><p class="text-sm font-bold ts-muted">Threat monitoring</p><h1 class="text-2xl font-black">Alerts</h1></div><button class="toggle" type="button" data-theme-toggle role="switch" aria-label="Switch theme" aria-checked="false"></button></div></header>
+        <div class="grid gap-6 p-4 lg:p-8">
+          <section class="ts-panel p-5">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              <div><h2 class="text-xl font-black">Alert Filters</h2><p class="mt-1 ts-muted">Filter threat activity by severity.</p></div>
+              <div class="grid gap-2 sm:grid-cols-4">
+                <button class="ts-btn ts-btn-secondary" type="button" data-alert-filter="All" aria-pressed="true">All</button>
+                <button class="ts-btn ts-btn-secondary" type="button" data-alert-filter="High" aria-pressed="false">High Risk</button>
+                <button class="ts-btn ts-btn-secondary" type="button" data-alert-filter="Medium" aria-pressed="false">Medium Risk</button>
+                <button class="ts-btn ts-btn-secondary" type="button" data-alert-filter="Low" aria-pressed="false">Low Risk</button>
+              </div>
+            </div>
+          </section>
+          <section class="grid gap-4 lg:grid-cols-[1fr_320px]">
+            <div class="grid gap-4" data-alert-list aria-live="polite">
+              <div class="skeleton h-24"></div>
+              <div class="skeleton h-24"></div>
+              <div class="skeleton h-24"></div>
+            </div>
+            <aside class="ts-panel p-5">
+              <h2 class="text-xl font-black">Timeline View</h2>
+              <ol class="mt-5 grid gap-4">
+                <li class="border-l-4 pl-4 alert-high"><strong>2 min</strong><p class="ts-muted">API key theft attempt</p></li>
+                <li class="border-l-4 pl-4 alert-medium"><strong>18 min</strong><p class="ts-muted">License mismatch</p></li>
+                <li class="border-l-4 pl-4 alert-low"><strong>1 hr</strong><p class="ts-muted">Domain intelligence update</p></li>
+              </ol>
+              <button class="ts-btn ts-btn-primary mt-6 w-full" type="button" data-feedback="Timeline exported.">Export Timeline</button>
+            </aside>
+          </section>
+        </div>
+      </section>
+      <nav class="bottom-nav" aria-label="Mobile dashboard navigation"><a href="home.html" data-nav-page="home.html">Home</a><a href="scanner.html" data-nav-page="scanner.html">Scan</a><a href="alerts.html" data-nav-page="alerts.html">Alerts</a><a href="brokers.html" data-nav-page="brokers.html">Brokers</a><a href="settings.html" data-nav-page="settings.html">Settings</a></nav>
+    </main>
+  </body>
+</html>

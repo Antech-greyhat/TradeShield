@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brokers | TradeShield</title>
+    <link rel="icon" href="../Assets/icons/icon-32.png">
+    <link rel="stylesheet" href="../css/tailwind-local.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/app.js"></script>
+    <script src="../js/ui.js" defer></script>
+    <script src="../js/dashboard.js" defer></script>
+  </head>
+  <body>
+    <div class="page-loader" role="status" aria-label="Loading brokers"><div class="loader-shell"><div class="skeleton h-5 w-44"></div><div class="mt-4 skeleton h-28"></div></div></div>
+    <main class="ts-page dashboard-shell">
+      <aside class="desktop-sidebar min-h-screen border-r p-5 ts-border">
+        <a class="ts-brand" href="../index.html"><img class="ts-logo" src="../Assets/icons/icon-128.png" alt=""><span>TradeShield</span></a>
+        <nav class="mt-8 grid gap-2" aria-label="Dashboard navigation"><a class="nav-item px-4" href="home.html" data-nav-page="home.html">Overview</a><a class="nav-item px-4" href="scanner.html" data-nav-page="scanner.html">Scanner</a><a class="nav-item px-4" href="alerts.html" data-nav-page="alerts.html">Alerts</a><a class="nav-item px-4" href="brokers.html" data-nav-page="brokers.html">Brokers</a><a class="nav-item px-4" href="settings.html" data-nav-page="settings.html">Settings</a></nav>
+      </aside>
+      <section class="dashboard-main min-w-0">
+        <header class="sticky top-0 z-30 border-b bg-[color:var(--surface)]/90 px-4 py-4 backdrop-blur ts-border lg:px-8"><div class="flex items-center justify-between gap-4"><div><p class="text-sm font-bold ts-muted">Broker verification</p><h1 class="text-2xl font-black">Brokers</h1></div><button class="toggle" type="button" data-theme-toggle role="switch" aria-label="Switch theme" aria-checked="false"></button></div></header>
+        <div class="grid gap-6 p-4 lg:p-8">
+          <section class="ts-panel p-5">
+            <div class="grid gap-3 lg:grid-cols-[1fr_auto]">
+              <label><span class="mb-2 block font-bold">Broker Search</span><input class="ts-input" type="search" data-broker-search placeholder="Search broker, jurisdiction, or status" aria-label="Search brokers"></label>
+              <button class="ts-btn ts-btn-primary self-end" type="button" data-broker-button>Search</button>
+            </div>
+          </section>
+          <section class="grid gap-6 xl:grid-cols-[340px_minmax(0,1fr)]">
+            <aside class="ts-panel p-5" data-broker-profile aria-live="polite">
+              <div class="skeleton h-8 w-24"></div>
+              <div class="mt-5 skeleton h-8 w-52"></div>
+              <div class="mt-6 skeleton h-36 w-36 rounded-full"></div>
+            </aside>
+            <section class="ts-panel table-wrap">
+              <table class="ts-table">
+                <caption class="sr-only">Broker verification results table</caption>
+                <thead><tr><th>Broker</th><th>License Status</th><th>Verification Status</th><th>Trust Score</th><th>Action</th></tr></thead>
+                <tbody data-broker-results></tbody>
+              </table>
+            </section>
+          </section>
+        </div>
+      </section>
+      <nav class="bottom-nav" aria-label="Mobile dashboard navigation"><a href="home.html" data-nav-page="home.html">Home</a><a href="scanner.html" data-nav-page="scanner.html">Scan</a><a href="alerts.html" data-nav-page="alerts.html">Alerts</a><a href="brokers.html" data-nav-page="brokers.html">Brokers</a><a href="settings.html" data-nav-page="settings.html">Settings</a></nav>
+    </main>
+  </body>
+</html>

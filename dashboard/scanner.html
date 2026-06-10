@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scanner | TradeShield</title>
+    <link rel="icon" href="../Assets/icons/icon-32.png">
+    <link rel="stylesheet" href="../css/tailwind-local.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/app.js"></script>
+    <script src="../js/ui.js" defer></script>
+    <script src="../js/scanner.js" defer></script>
+  </head>
+  <body>
+    <div class="page-loader" role="status" aria-label="Loading scanner"><div class="loader-shell"><div class="skeleton h-5 w-40"></div><div class="mt-4 skeleton h-28"></div></div></div>
+    <main class="ts-page dashboard-shell">
+      <aside class="desktop-sidebar min-h-screen border-r p-5 ts-border">
+        <a class="ts-brand" href="../index.html"><img class="ts-logo" src="../Assets/icons/icon-128.png" alt=""><span>TradeShield</span></a>
+        <nav class="mt-8 grid gap-2" aria-label="Dashboard navigation"><a class="nav-item px-4" href="home.html" data-nav-page="home.html">Overview</a><a class="nav-item px-4" href="scanner.html" data-nav-page="scanner.html">Scanner</a><a class="nav-item px-4" href="alerts.html" data-nav-page="alerts.html">Alerts</a><a class="nav-item px-4" href="brokers.html" data-nav-page="brokers.html">Brokers</a><a class="nav-item px-4" href="settings.html" data-nav-page="settings.html">Settings</a></nav>
+      </aside>
+      <section class="dashboard-main min-w-0">
+        <header class="sticky top-0 z-30 border-b bg-[color:var(--surface)]/90 px-4 py-4 backdrop-blur ts-border lg:px-8"><div class="flex items-center justify-between gap-4"><div><p class="text-sm font-bold ts-muted">Website scanning center</p><h1 class="text-2xl font-black">Scanner</h1></div><button class="toggle" type="button" data-theme-toggle role="switch" aria-label="Switch theme" aria-checked="false"></button></div></header>
+        <div class="grid gap-6 p-4 lg:p-8">
+          <section class="ts-panel p-5">
+            <form class="grid gap-3 lg:grid-cols-[1fr_auto]" data-scan-form>
+              <label><span class="mb-2 block font-bold">Domain input</span><input class="ts-input" type="text" data-scan-input placeholder="example-broker.com" aria-label="Domain to analyze"></label>
+              <button class="ts-btn ts-btn-primary self-end" type="submit">Analyze</button>
+            </form>
+            <div class="mt-4 flex flex-wrap gap-2" aria-label="Sample domains">
+              <button class="ts-btn ts-btn-secondary" type="button" data-sample-domain="apexyield-markets.com">ApexYield</button>
+              <button class="ts-btn ts-btn-secondary" type="button" data-sample-domain="coinmirage-copy.xyz">CoinMirage</button>
+              <button class="ts-btn ts-btn-secondary" type="button" data-sample-domain="blueharbor-capital.com">BlueHarbor</button>
+            </div>
+          </section>
+          <section class="ts-panel p-5" data-scan-results aria-live="polite">
+            <div class="grid gap-4 md:grid-cols-[180px_minmax(0,1fr)]">
+              <div class="risk-meter meter-medium meter-62"><span>62</span></div>
+              <div><h2 class="text-2xl font-black">Ready to scan</h2><p class="mt-2 ts-muted">Enter a domain or choose a sample to simulate keyword matches, API key requests, domain age, broker verification, and risk level.</p><div class="mt-5 grid gap-3 sm:grid-cols-2"><div class="skeleton h-20"></div><div class="skeleton h-20"></div></div></div>
+            </div>
+          </section>
+        </div>
+      </section>
+      <nav class="bottom-nav" aria-label="Mobile dashboard navigation"><a href="home.html" data-nav-page="home.html">Home</a><a href="scanner.html" data-nav-page="scanner.html">Scan</a><a href="alerts.html" data-nav-page="alerts.html">Alerts</a><a href="brokers.html" data-nav-page="brokers.html">Brokers</a><a href="settings.html" data-nav-page="settings.html">Settings</a></nav>
+    </main>
+  </body>
+</html>

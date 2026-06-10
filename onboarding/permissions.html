@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Permissions | TradeShield</title>
+    <link rel="icon" href="../Assets/icons/icon-32.png">
+    <link rel="stylesheet" href="../css/tailwind-local.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/app.js"></script>
+    <script src="../js/ui.js" defer></script>
+    <script src="../js/onboarding.js" defer></script>
+  </head>
+  <body>
+    <div class="page-loader" role="status" aria-label="Loading permissions">
+      <div class="loader-shell">
+        <div class="skeleton h-5 w-56"></div>
+        <div class="mt-4 skeleton h-24"></div>
+      </div>
+    </div>
+    <main class="ts-page">
+      <header class="ts-container flex items-center justify-between py-5">
+        <a class="ts-brand" href="../index.html" aria-label="TradeShield home">
+          <img class="ts-logo" src="../Assets/icons/icon-128.png" alt="">
+          <span>TradeShield</span>
+        </a>
+        <button class="toggle" type="button" data-theme-toggle role="switch" aria-label="Switch theme" aria-checked="false"></button>
+      </header>
+      <section class="ts-container grid min-h-[calc(100vh-84px)] items-center gap-8 py-8 lg:grid-cols-[0.8fr_1fr]">
+        <div>
+          <span class="ts-pill pill-success">Permission review</span>
+          <h1 class="mt-5 text-4xl font-black sm:text-5xl">Enable protection with confidence</h1>
+          <p class="mt-4 text-lg leading-8 ts-muted">TradeShield only uses extension permissions to analyze risky pages and alert you before unsafe trading actions.</p>
+          <section class="ts-panel mt-8 p-5">
+            <h2 class="text-xl font-black">Privacy commitment</h2>
+            <p class="mt-3 leading-7 ts-muted">TradeShield never stores passwords, API keys, or personal financial information.</p>
+          </section>
+        </div>
+        <div class="grid gap-4">
+          <label class="ts-card flex cursor-pointer gap-4 p-5">
+            <input class="mt-2 h-5 w-5" type="checkbox" data-permission-check>
+            <span><strong>Website Analysis</strong><span class="mt-1 block ts-muted">Read visible page signals on investment and broker websites.</span></span>
+          </label>
+          <label class="ts-card flex cursor-pointer gap-4 p-5">
+            <input class="mt-2 h-5 w-5" type="checkbox" data-permission-check>
+            <span><strong>Domain Verification</strong><span class="mt-1 block ts-muted">Check domain age, redirects, and identity consistency.</span></span>
+          </label>
+          <label class="ts-card flex cursor-pointer gap-4 p-5">
+            <input class="mt-2 h-5 w-5" type="checkbox" data-permission-check>
+            <span><strong>Threat Detection</strong><span class="mt-1 block ts-muted">Warn when pages ask for dangerous API permissions or deposits.</span></span>
+          </label>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <button class="ts-btn ts-btn-secondary" type="button" data-navigate="guide.html">Back</button>
+            <button class="ts-btn ts-btn-primary" type="button" data-enable-protection disabled>Enable Protection</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Settings | TradeShield</title>
+    <link rel="icon" href="../Assets/icons/icon-32.png">
+    <link rel="stylesheet" href="../css/tailwind-local.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/app.js"></script>
+    <script src="../js/ui.js" defer></script>
+    <script src="../js/dashboard.js" defer></script>
+  </head>
+  <body>
+    <div class="page-loader" role="status" aria-label="Loading settings"><div class="loader-shell"><div class="skeleton h-5 w-40"></div><div class="mt-4 grid gap-3"><div class="skeleton h-16"></div><div class="skeleton h-16"></div></div></div></div>
+    <main class="ts-page dashboard-shell">
+      <aside class="desktop-sidebar min-h-screen border-r p-5 ts-border">
+        <a class="ts-brand" href="../index.html"><img class="ts-logo" src="../Assets/icons/icon-128.png" alt=""><span>TradeShield</span></a>
+        <nav class="mt-8 grid gap-2" aria-label="Dashboard navigation"><a class="nav-item px-4" href="home.html" data-nav-page="home.html">Overview</a><a class="nav-item px-4" href="scanner.html" data-nav-page="scanner.html">Scanner</a><a class="nav-item px-4" href="alerts.html" data-nav-page="alerts.html">Alerts</a><a class="nav-item px-4" href="brokers.html" data-nav-page="brokers.html">Brokers</a><a class="nav-item px-4" href="settings.html" data-nav-page="settings.html">Settings</a></nav>
+      </aside>
+      <section class="dashboard-main min-w-0">
+        <header class="sticky top-0 z-30 border-b bg-[color:var(--surface)]/90 px-4 py-4 backdrop-blur ts-border lg:px-8"><div class="flex items-center justify-between gap-4"><div><p class="text-sm font-bold ts-muted">User settings</p><h1 class="text-2xl font-black">Settings</h1></div><button class="toggle" type="button" data-theme-toggle role="switch" aria-label="Switch theme" aria-checked="false"></button></div></header>
+        <div class="grid gap-6 p-4 lg:p-8">
+          <section class="ts-panel p-5">
+            <h2 class="text-xl font-black">Appearance</h2>
+            <div class="mt-5 flex items-center justify-between gap-4"><div><strong>Dark Mode Toggle</strong><p class="ts-muted">Persisted across every TradeShield page.</p></div><button class="toggle" type="button" data-theme-toggle role="switch" aria-label="Switch theme" aria-checked="false"></button></div>
+          </section>
+          <section class="grid gap-4 lg:grid-cols-2">
+            <article class="ts-panel p-5"><h2 class="text-xl font-black">Notifications</h2><div class="mt-5 grid gap-4"><div class="flex items-center justify-between gap-4"><span>High-risk alerts</span><button class="toggle" type="button" data-setting-toggle="High-risk alerts" role="switch" aria-checked="true"></button></div><div class="flex items-center justify-between gap-4"><span>Broker verification changes</span><button class="toggle" type="button" data-setting-toggle="Broker verification changes" role="switch" aria-checked="true"></button></div><div class="flex items-center justify-between gap-4"><span>Weekly protection summary</span><button class="toggle" type="button" data-setting-toggle="Weekly summary" role="switch" aria-checked="false"></button></div></div></article>
+            <article class="ts-panel p-5"><h2 class="text-xl font-black">Privacy Settings</h2><div class="mt-5 grid gap-4"><div class="flex items-center justify-between gap-4"><span>Local-only scan history</span><button class="toggle" type="button" data-setting-toggle="Local scan history" role="switch" aria-checked="true"></button></div><div class="flex items-center justify-between gap-4"><span>Mask API key fields</span><button class="toggle" type="button" data-setting-toggle="API key masking" role="switch" aria-checked="true"></button></div><div class="flex items-center justify-between gap-4"><span>Share anonymous threat signals</span><button class="toggle" type="button" data-setting-toggle="Anonymous threat signals" role="switch" aria-checked="false"></button></div></div></article>
+          </section>
+          <section class="ts-panel p-5">
+            <h2 class="text-xl font-black">Data Settings</h2>
+            <div class="mt-5 grid gap-3 sm:grid-cols-3">
+              <button class="ts-btn ts-btn-secondary" type="button" data-feedback="Local scan history cleared.">Clear History</button>
+              <button class="ts-btn ts-btn-secondary" type="button" data-feedback="Threat cache refreshed.">Refresh Threat Data</button>
+              <button class="ts-btn ts-btn-secondary" type="button" data-copy="TRADESHIELD-REPORT-2026">Copy Report ID</button>
+            </div>
+          </section>
+          <section class="ts-panel p-5">
+            <h2 class="text-xl font-black">About TradeShield</h2>
+            <p class="mt-3 leading-7 ts-muted">TradeShield is a browser-based extension interface for detecting fake trading platforms, broker impersonation, API-key theft attempts, and suspicious investment websites.</p>
+            <button class="ts-btn ts-btn-primary mt-6 w-full sm:w-auto" type="button" data-save-settings>Save Settings</button>
+          </section>
+        </div>
+      </section>
+      <nav class="bottom-nav" aria-label="Mobile dashboard navigation"><a href="home.html" data-nav-page="home.html">Home</a><a href="scanner.html" data-nav-page="scanner.html">Scan</a><a href="alerts.html" data-nav-page="alerts.html">Alerts</a><a href="brokers.html" data-nav-page="brokers.html">Brokers</a><a href="settings.html" data-nav-page="settings.html">Settings</a></nav>
+    </main>
+  </body>
+</html>

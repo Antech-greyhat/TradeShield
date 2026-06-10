@@ -1,0 +1,42 @@
+[
+  {
+    "name": "BlueHarbor Capital",
+    "jurisdiction": "United Kingdom",
+    "license": "FCA 784219",
+    "status": "Verified",
+    "trustScore": 92,
+    "notes": "Regulated broker with matching domain ownership and transparent fee disclosures."
+  },
+  {
+    "name": "ApexYield Markets",
+    "jurisdiction": "Unknown",
+    "license": "Unverified",
+    "status": "Flagged",
+    "trustScore": 18,
+    "notes": "Uses cloned licensing language, withdrawal complaints, and aggressive copy-trading promises."
+  },
+  {
+    "name": "OrbitTrade Pro",
+    "jurisdiction": "Seychelles",
+    "license": "Pending review",
+    "status": "Unknown",
+    "trustScore": 54,
+    "notes": "Mixed signals. Verify account funding instructions before depositing."
+  },
+  {
+    "name": "NorthBridge FX",
+    "jurisdiction": "Australia",
+    "license": "ASIC 431882",
+    "status": "Verified",
+    "trustScore": 86,
+    "notes": "License number, company name, and regulator references align."
+  },
+  {
+    "name": "CoinMirage Copy Hub",
+    "jurisdiction": "Unknown",
+    "license": "None",
+    "status": "Flagged",
+    "trustScore": 11,
+    "notes": "Requests exchange API keys with withdrawal permissions and advertises guaranteed returns."
+  }
+]
