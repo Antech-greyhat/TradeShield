@@ -15,9 +15,12 @@
     <div class="page-loader" role="status" aria-label="Loading dashboard">
       <div class="loader-shell"><div class="skeleton h-5 w-44"></div><div class="mt-4 skeleton h-32"></div></div>
     </div>
-    <main class="ts-page dashboard-shell">
-      <aside class="desktop-sidebar min-h-screen border-r p-5 ts-border">
-        <a class="ts-brand" href="../index.html"><img class="ts-logo" src="../Assets/icons/icon-128.png" alt=""><span>TradeShield</span></a>
+    <main class="ts-page dashboard-shell" data-dashboard-shell>
+      <aside class="desktop-sidebar min-h-screen border-r p-5 ts-border" id="dashboard-sidebar" data-sidebar aria-label="Dashboard sidebar" aria-hidden="false">
+        <div class="sidebar-head">
+          <a class="ts-brand" href="../index.html"><img class="ts-logo" src="../Assets/icons/icon-128.png" alt=""><span>TradeShield</span></a>
+          <button class="ts-icon-btn sidebar-close" type="button" data-sidebar-toggle aria-controls="dashboard-sidebar" aria-expanded="true" aria-label="Close sidebar"><span></span><span></span></button>
+        </div>
         <nav class="mt-8 grid gap-2" aria-label="Dashboard navigation">
           <a class="nav-item px-4" href="home.html" data-nav-page="home.html">Overview</a>
           <a class="nav-item px-4" href="scanner.html" data-nav-page="scanner.html">Scanner</a>
@@ -29,7 +32,7 @@
       <section class="dashboard-main min-w-0">
         <header class="sticky top-0 z-30 border-b bg-[color:var(--surface)]/90 px-4 py-4 backdrop-blur ts-border lg:px-8">
           <div class="flex items-center justify-between gap-4">
-            <div><p class="text-sm font-bold ts-muted">Protection overview</p><h1 class="text-2xl font-black">Dashboard Home</h1></div>
+            <div class="flex min-w-0 items-center gap-3"><button class="ts-icon-btn sidebar-toggle" type="button" data-sidebar-toggle aria-controls="dashboard-sidebar" aria-expanded="true" aria-label="Close sidebar"><span></span><span></span><span></span></button><div><p class="text-sm font-bold ts-muted">Protection overview</p><h1 class="text-2xl font-black">Dashboard Home</h1></div></div>
             <button class="toggle" type="button" data-theme-toggle role="switch" aria-label="Switch theme" aria-checked="false"></button>
           </div>
         </header>
@@ -70,6 +73,7 @@
           </section>
         </div>
       </section>
+      <button class="sidebar-backdrop" type="button" data-sidebar-backdrop aria-label="Close sidebar"></button>
       <nav class="bottom-nav" aria-label="Mobile dashboard navigation">
         <a href="home.html" data-nav-page="home.html">Home</a><a href="scanner.html" data-nav-page="scanner.html">Scan</a><a href="alerts.html" data-nav-page="alerts.html">Alerts</a><a href="brokers.html" data-nav-page="brokers.html">Brokers</a><a href="settings.html" data-nav-page="settings.html">Settings</a>
       </nav>

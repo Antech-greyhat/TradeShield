@@ -169,6 +169,8 @@ select:focus-visible {
 }
 
 .ts-icon-btn {
+  display: inline-grid;
+  place-items: center;
   width: 44px;
   height: 44px;
   min-height: 44px;
@@ -450,6 +452,58 @@ select:focus-visible {
   transform: scale(0.98);
 }
 
+.sidebar-toggle,
+.sidebar-close {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.sidebar-toggle span,
+.sidebar-close span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.sidebar-toggle span + span {
+  margin-top: 4px;
+}
+
+.sidebar-close span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -9px;
+  margin-top: -1px;
+}
+
+.sidebar-close span:first-child {
+  transform: rotate(45deg);
+}
+
+.sidebar-close span:last-child {
+  transform: rotate(-45deg);
+}
+
+.sidebar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 44;
+  display: none;
+  border: 0;
+  background: rgba(2, 6, 23, 0.58);
+}
+
 .bottom-nav {
   position: fixed;
   right: 0;
@@ -664,6 +718,31 @@ select:focus-visible {
   .dashboard-shell {
     display: grid;
     grid-template-columns: 280px minmax(0, 1fr);
+    transition: grid-template-columns 220ms ease;
+  }
+
+  .dashboard-shell.is-sidebar-closed {
+    grid-template-columns: 0 minmax(0, 1fr);
+  }
+
+  .dashboard-shell.is-sidebar-closed .desktop-sidebar {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .desktop-sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden auto;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    transition: transform 220ms ease, opacity 220ms ease, visibility 220ms ease;
+  }
+
+  .sidebar-close {
+    display: none;
   }
 
   .bottom-nav {
@@ -673,7 +752,27 @@ select:focus-visible {
 
 @media (max-width: 1023px) {
   .desktop-sidebar {
-    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 45;
+    width: min(320px, calc(100vw - 56px));
+    overflow-y: auto;
+    background: var(--bg);
+    box-shadow: var(--shadow);
+    transform: translateX(-105%);
+    transition: transform 220ms ease;
+    visibility: hidden;
+  }
+
+  .dashboard-shell.is-sidebar-open .desktop-sidebar {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .dashboard-shell.is-sidebar-open .sidebar-backdrop {
+    display: block;
   }
 
   .dashboard-main {

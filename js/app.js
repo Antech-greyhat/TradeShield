@@ -96,6 +96,46 @@
     });
   };
 
+  const initSidebar = () => {
+    const shell = document.querySelector("[data-dashboard-shell]");
+    const sidebar = document.querySelector("[data-sidebar]");
+    const toggles = document.querySelectorAll("[data-sidebar-toggle]");
+    if (!shell || !sidebar || !toggles.length) return;
+
+    const largeScreen = () => window.matchMedia("(min-width: 1024px)").matches;
+    const setExpanded = (expanded) => {
+      shell.classList.toggle("is-sidebar-open", expanded && !largeScreen());
+      shell.classList.toggle("is-sidebar-closed", !expanded && largeScreen());
+      sidebar.setAttribute("aria-hidden", String(!expanded));
+      toggles.forEach((toggle) => {
+        toggle.setAttribute("aria-expanded", String(expanded));
+        toggle.setAttribute("aria-label", expanded ? "Close sidebar" : "Open sidebar");
+      });
+    };
+
+    setExpanded(largeScreen() ? !shell.classList.contains("is-sidebar-closed") : false);
+
+    toggles.forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+        setExpanded(!expanded);
+      });
+    });
+
+    document.querySelector("[data-sidebar-backdrop]")?.addEventListener("click", () => setExpanded(false));
+    sidebar.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (!largeScreen()) setExpanded(false);
+      });
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && shell.classList.contains("is-sidebar-open")) setExpanded(false);
+    });
+    window.addEventListener("resize", () => {
+      setExpanded(largeScreen() ? !shell.classList.contains("is-sidebar-closed") : shell.classList.contains("is-sidebar-open"));
+    });
+  };
+
   const initExternalActions = () => {
     document.querySelectorAll("[data-copy]").forEach((button) => {
       button.addEventListener("click", async () => {
@@ -111,6 +151,7 @@
     initButtons();
     initThemeToggles();
     initNavigationState();
+    initSidebar();
     initExternalActions();
   });
 })();
