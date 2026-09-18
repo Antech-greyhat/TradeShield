@@ -18,11 +18,21 @@
     return "Low";
   };
 
+  // Scanner input is user-controlled, so never interpolate it into markup unescaped.
+  const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (character) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "'": "&#39;",
+    "\"": "&quot;"
+  })[character]);
+
   const renderResults = (domain, score) => {
     const label = riskLabel(score);
     const meterClass = label === "High" ? "meter-high meter-88" : label === "Medium" ? "meter-medium meter-62" : "meter-low meter-34";
     const results = document.querySelector("[data-scan-results]");
     if (!results) return;
+    const safeDomain = escapeHtml(domain);
     results.innerHTML = `
       <div class="grid gap-6 lg:grid-cols-[220px_minmax(0,1fr)]">
         <div class="grid place-items-center">
@@ -32,7 +42,7 @@
           <span class="risk-badge ${label === "High" ? "risk-high" : label === "Medium" ? "risk-medium" : "risk-low"} mt-4">${label} risk</span>
         </div>
         <div>
-          <h2 class="text-2xl font-black">${domain}</h2>
+          <h2 class="text-2xl font-black">${safeDomain}</h2>
           <p class="mt-2 ts-muted">TradeShield analyzed the domain structure, investment language, broker signals, and API permission prompts.</p>
           <div class="mt-6 grid gap-3 sm:grid-cols-2">
             ${[
