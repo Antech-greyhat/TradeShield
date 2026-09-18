@@ -15,7 +15,13 @@
     const toast = document.createElement("div");
     toast.className = "toast";
     toast.dataset.type = type;
-    toast.innerHTML = `<strong class="block text-sm">${title}</strong><span class="block mt-1 text-sm ts-muted">${message}</span>`;
+    const heading = document.createElement("strong");
+    heading.className = "block text-sm";
+    heading.textContent = title;
+    const detail = document.createElement("span");
+    detail.className = "block mt-1 text-sm ts-muted";
+    detail.textContent = message;
+    toast.append(heading, detail);
     region.appendChild(toast);
     window.setTimeout(() => toast.remove(), 4200);
   };

@@ -1,5 +1,0 @@
-*.js linguist-language=JavaScript
-*.css linguist-language=CSS
-*.html linguist-language=HTML
-js/repo-language-profile.js linguist-language=JavaScript
-css/repo-language-profile.css linguist-language=CSS
